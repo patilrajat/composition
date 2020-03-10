@@ -10,6 +10,24 @@
 #include "square.h"
 #include <iostream>
 using namespace std;
+float area(shape *ptr[])
+{
+	float area=0.0;
+	 for (int i = 0; i < 5; ++i)
+	         {
+	    		area=area+ptr[i]->calc_area();
+	    	}
+	return area;
+}
+float perimeter(shape *ptr[])
+{
+	float perimeter=0.0;
+	for (int i = 0; i < 5; ++i)
+	 {
+		perimeter=perimeter+ptr[i]->calc_peri();
+	}
+	return perimeter;
+}
 int main()
 {
 	int option;
@@ -32,18 +50,10 @@ int main()
 		ptr[i]->accept();
 	}
 	float total_area,total_perimeter;
-	for(int i=0;i<5;++i)
-		ptr[i]->display();
-
-	total_area=0.0;
-	for(int i=0;i<5;++i)
-		total_area=total_area+ptr[i]->calc_area();
-	total_perimeter=0.0;
-	for(int i=0;i<5;++i)
-		total_perimeter=total_perimeter+ptr[i]->calc_peri();
-
-		cout<<"Total area :"<<total_area<<endl;
-		cout<<"Total perimeter :"<<total_perimeter<<endl;
+	total_area=::area(ptr);
+	cout<<"Total area :"<<total_area<<endl;
+	total_perimeter=::perimeter(ptr);
+	cout<<"Total perimeter :"<<total_perimeter<<endl;
 
 		return 0;
 }
