@@ -50,9 +50,9 @@ int main()
 		ptr[i]->accept();
 	}
 	float total_area,total_perimeter;
-	total_area=::area(ptr);
+	total_area=area(ptr);
 	cout<<"Total area :"<<total_area<<endl;
-	total_perimeter=::perimeter(ptr);
+	total_perimeter=perimeter(ptr);
 	cout<<"Total perimeter :"<<total_perimeter<<endl;
 
 		return 0;
